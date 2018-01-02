@@ -10,6 +10,8 @@ from dxfwrite import DXFEngine as dxf
 #  версия 0.5 smallbo# 
 #  версия 0.6 smallbo top
 #  версия 0.7 clear class
+#  версия 0.8 one layer - one detal
+#  версия 0.9 smallbox FACE, BOTTOM
 
 #  функции для дуг
 def angle (x1, y1, x2, y2, x3, y3, x4, y4):
@@ -111,7 +113,7 @@ class smallbox:
     info4 = 'на винтах'
     info5 = 'расчёт по внутреннему размер'
 
-    # face side
+    # rigth side
     l1x = 0
     l1y = 0
     l1x1 = 0
@@ -191,48 +193,73 @@ class smallbox:
     l16y = 0
     l16x1 = 0
     l16y1 = 0
-    # top
+    # top figure
     l101x = 0
     l101y = 0
-    l101x1 = 1.0
-    l101y1 = 1.0
+    l101x1 = 0
+    l101y1 = 0
 
     l102x = 0
     l102y = 0
-    l102x1 = 1.0
-    l102y1 = 1.0
+    l102x1 = 0
+    l102y1 = 0
 
 
     l103x = 0
     l103y = 0
-    l103x1 = 1.0
-    l103y1 = 1.0
+    l103x1 = 0
+    l103y1 = 0
 
     l104x = 0
     l104y = 0
-    l104x1 = 1.0
-    l104y1 = 1.0
+    l104x1 = 0
+    l104y1 = 0
     
     r101x = 0
     r101y = 0
-    r101w = 1.0
-    r101h = 1.0
+    r101w = 0
+    r101h = 0
 
     r102x = 0
     r102y = 0
-    r102w = 1.0
-    r102h = 1.0
+    r102w = 0
+    r102h = 0
 
     r103x = 0
     r103y = 0
-    r103w = 1.0
-    r103h = 1.0
+    r103w = 0
+    r103h = 0
 
     r104x = 0
     r104y = 0
-    r104w = 1.0
-    r104h = 1.0
-        # dno
+    r104w = 0
+    r104h = 0
+     
+    arc101x = 0
+    arc101y = 0
+    arc101r = 30.0
+    arc101sangle = 180.0
+    arc101eangle = 270.0
+
+    arc102x = 0
+    arc12y = 0
+    arc102r = 30.0
+    arc102sangle = 90.0
+    arc102eangle = 180.0
+
+    arc103x = 0
+    arc103y = 0
+    arc103r = 30.0
+    arc103sangle = 0.0
+    arc103eangle = 90.0
+
+    arc104x = 0
+    arc104y = 0
+    arc104r = 30.0
+    arc104sangle = 270.0
+    arc104eangle = 360.0
+
+    # dno
     r101x = 0
     r101y = 0
     r101w = 1.0
@@ -278,30 +305,6 @@ class smallbox:
     r109w = 1.0
     r109h = 1.0
     
-    arc101x = 0
-    arc101y = 0
-    arc101r = 30.0
-    arc101sangle = 0.0
-    arc101eangle = 90.0
-
-    arc102x = 0
-    arc12y = 0
-    arc102r = 30.0
-    arc102sangle = 90.0
-    arc102eangle = 180.0
-
-    arc103x = 0
-    arc103y = 0
-    arc103r = 30.0
-    arc103sangle = 270.0
-    arc103eangle = 360.0
-
-    arc104x = 0
-    arc104y = 0
-    arc104r = 30.0
-    arc104sangle = 180.0
-    arc104eangle = 270.0
-
     c101x = 0
     c101y = 0
     c101r= 30.0
@@ -317,72 +320,72 @@ class smallbox:
     c104x = 0
     c104y = 0
     c104r = 30.0
- # dno
+    # figure dno
     l151x = 0
     l151y = 0
-    l151x1 = 1.0
-    l151y1 = 1.0
+    l151x1 = 0
+    l151y1 = 0
 
     l152x = 0
     l152y = 0
-    l152x1 = 1.0
-    l152y1 = 1.0
+    l152x1 = 0
+    l152y1 = 0
 
 
     l153x = 0
     l153y = 0
-    l153x1 = 1.0
-    l153y1 = 1.0
+    l153x1 = 0
+    l153y1 = 0
 
     l154x = 0
     l154y = 0
-    l154x1 = 1.0
-    l154y1 = 1.0
+    l154x1 = 0
+    l154y1 = 0
     
     r151x = 0
     r151y = 0
-    r151w = 1.0
-    r151h = 1.0
+    r151w = 0
+    r151h = 0
 
     r152x = 0
     r152y = 0
-    r152w = 1.0
-    r152h = 1.0
+    r152w = 0
+    r152h = 0
 
     r153x = 0
     r153y = 0
-    r153w = 1.0
-    r153h = 1.0
+    r153w = 0
+    r153h = 0
 
     r154x = 0
     r154y = 0
-    r154w = 1.0
-    r154h = 1.0
-        # dno
+    r154w = 0
+    r154h = 0
+
     r155x = 0
     r155y = 0
-    r155w = 1.0
-    r155h = 1.0
+    r155w = 0
+    r155h = 0
 
     r156x = 0
     r156y = 0
-    r156w = 1.0
-    r156h = 1.0
+    r156w = 0
+    r156h = 0
 
     r157x = 0
     r157y = 0
-    r157w = 1.0
-    r157h = 1.0
+    r157w = 0
+    r157h = 0
 
     r158x = 0
     r158y = 0
-    r158w = 1.0
-    r158h = 1.0
+    r158w = 0
+    r158h = 0
     
     arc151y = 0
     arc151r = 30.0
-    arc151sangle = 0.0
-    arc151eangle = 90.0
+    arc151sangle = 180.0
+    arc151eangle = 270.0
 
     arc152x = 0
     arc152y = 0
@@ -393,14 +396,14 @@ class smallbox:
     arc153x = 0
     arc153y = 0
     arc153r = 30.0
-    arc153sangle = 270.0
-    arc153eangle = 360.0
+    arc153sangle = 0.0
+    arc153eangle = 90.0
 
     arc154x = 0
     arc154y = 0
     arc154r = 30.0
-    arc154sangle = 180.0
-    arc154eangle = 270.0
+    arc154sangle = 270.0
+    arc154eangle = 360.0
 
     c151x = 0
     c151y = 0
@@ -417,22 +420,98 @@ class smallbox:
     c154x = 0
     c154y = 0
     c154r = 30.0
+     # face side
+    l201x = 0
+    l201y = 0
+    l201x1 = 0
+    l201y1 = 0
 
+    l202x = 0
+    l202y = 0
+    l202x1 = 0
+    l202y1 = 0
+
+    l203x = 0
+    l203y = 0
+    l203x1 = 0
+    l203y1 = 0
+
+    l204x = 0
+    l204y = 0
+    l204x1 = 0
+    l204y1 = 0
+
+    l205x = 0
+    l205y = 0
+    l205x1 = 0
+    l205y1 = 0
+
+    l206x = 0
+    l206y = 0
+    l206x1 = 0
+    l206y1 = 0
+
+    l207x = 0
+    l207y = 0
+    l207x1 = 0
+    l207y1 = 0
+
+    l208x = 0
+    l208y = 0
+    l208x1 = 0
+    l208y1 = 0
+
+    l209x = 0
+    l209y = 0
+    l209x1 = 0
+    l209y1 = 0
+
+    l210x = 0
+    l210y = 0
+    l210x1 = 0
+    l210y1 = 0
+
+    l211x = 0
+    l211y = 0
+    l211x1 = 0
+    l211y1 = 0
+
+    l212x = 0
+    l212y = 0
+    l212x1 = 0
+    l212y1 = 0
+
+    l213x = 0
+    l213y = 0
+    l213x1 = 0
+    l213y1 = 0
+
+    l214x = 0
+    l214y = 0
+    l214x1 = 0
+    l24y1 = 0
+
+    l215x = 0
+    l215y = 0
+    l215x1 = 0
+    l215y1 = 0
+
+    l216x = 0
+    l216y = 0
+    l216x1 = 0
+    l216y1 = 0
+    
 #    def __init__(self):
  #       self.wpanel = w
   #      self.hpanel = h
 
     def compute (self): #  ширина поля рисунка
 
-        #  контур
-        # self.l1x = lf #  левое поле
-        # self.r1y = bf #  высота панели - верхнее поле -полфрезы- высота
-        # self.l1x1 = self.height
+        # правая сторон
         self.l1y1 = self.height
         
-        #self.l2x = self.l1x
         self.l2y = self.l1y1
-        self.l2x1 = ((self.deep - (self.thickness * 2.0))/2.0) - self.thickness
+        self.l2x1 = (self.deep / 2.0) - self.thickness
         self.l2y1 = self.height
 
         self.l3x = self.l2x1
@@ -443,7 +522,7 @@ class smallbox:
         self.l4x = self.l3x1
         self.l4y = self.l3y1
         self.l4x1 = self.l3x + (self.thickness * 2.0)
-        self.l4y1 = self.l3y
+        self.l4y1 = self.l4y
 
         self.l5x = self.l4x1
         self.l5y = self.l4y1
@@ -452,17 +531,17 @@ class smallbox:
         
         self.l6x = self.l5x1
         self.l6y = self.l5y1
-        self.l6x1 = self.deep - (self.thickness  * 2.0)
+        self.l6x1 = self.deep
         self.l6y1 = self.height#  левый нижний
         
         self.l7x = self.l6x1
-        self.l7y = self.l6x1
-        self.l7x1 = self.l6x
+        self.l7y = self.l6y1
+        self.l7x1 = self.l7x
         # self.l7y1 = self.height
         
         self.l8x = self.l7x1
         self.l8y = self.l7y1
-        self.l8x1 =((self.deep - (self.thickness * 2.0)) -((self.deep - (self.thickness * 2.0)) / 4.0)) - (self.thickness *2.0)
+        self.l8x1 = ((self.deep / 4.0) * 3.0) + self.thickness
 
        # self.l8y1 = self.height
         self.l9x = self.l8x1
@@ -473,7 +552,7 @@ class smallbox:
         self.l10x = self.l9x1
         self.l10y = self.l9y1
         self.l10x1 = self.l9x - (self.thickness  * 2.0)
-        # self.l10y1 = self.l10y
+        self.l10y1 = self.l10y
         
         self.l11x = self.l10x1
         self.l11y = self.l10y1
@@ -482,30 +561,105 @@ class smallbox:
 
         self.l12x = self.l11x1
         self.l12y = self.l11y1
-        self.l12x1 = ((self.deep - (self.thickness * 2.0)) / 4.0 ) + (self.thickness *2.0)
+        self.l12x1 = (self.deep / 4.0) + self.thickness
         # self.l12y1 = -(self.thickness)#  левый нижний
         
         self.l13x = self.l12x1
         self.l13y = self.l12y1
         self.l13x1 = self.l13x# - (self.thickness* * 2.0)
-        # self.l13y1 = self.l13y#  левый нижний
+        self.l13y1 = self.l10y#  левый нижний
         
         self.l14x = self.l13x1
         self.l14y = self.l13y1
-        self.l14x1 = self.l14y - (self.thickness  * 2.0)
-        self.l14y1 = self.height#  левый нижний
+        self.l14x1 = (self.deep /  4.0) - self.thickness
+        self.l14y1 = self.l14y#  левый нижний
         
         self.l15x = self.l14x1
         self.l15y = self.l14y1
         self.l15x1 = self.l15x# deep - (self.thickness* * 2.0)
         # self.l15y1 = self.height#  левый нижний
         
-        self.l16x = self.l5x1
-        self.l16y = self.l5y1
+        self.l16x = self.l15x1
+        self.l16y = self.l15y1
+        # передняя сторон
+        self.l201y1 = self.height
+        
+        self.l202y = self.l201y1
+        self.l202x1 = (self.width / 2.0) - self.thickness
+        self.l202y1 = self.height
+
+        self.l203x = self.l202x1
+        self.l203y = self.l202y1
+        self.l203x1 = self.l203x
+        self.l203y1 = self.l203y + self.thickness
+ 
+        self.l204x = self.l203x1
+        self.l204y = self.l203y1
+        self.l204x1 = self.l203x + (self.thickness * 2.0)
+        self.l204y1 = self.l204y
+
+        self.l205x = self.l204x1
+        self.l205y = self.l204y1
+        self.l205x1 = self.l205x
+        self.l205y1 = self.height
+        
+        self.l206x = self.l205x1
+        self.l206y = self.l205y1
+        self.l206x1 = self.width
+        self.l206y1 = self.height#  левый нижний
+        
+        self.l207x = self.l206x1
+        self.l207y = self.l206y1
+        self.l207x1 = self.l207x
+        # self.l207y1 = self.height
+        
+        self.l208x = self.l207x1
+        self.l208y = self.l207y1
+        self.l208x1 = ((self.width / 4.0) * 3.0) + self.thickness
+
+       # self.l208y1 = self.height
+        self.l209x = self.l208x1
+        self.l209y = self.l208y1
+        self.l209x1 = self.l209x
+        self.l209y1 = -(self.thickness)
+        
+        self.l210x = self.l209x1
+        self.l210y = self.l209y1
+        self.l210x1 = self.l209x - (self.thickness  * 2.0)
+        self.l210y1 = self.l210y
+        
+        self.l211x = self.l210x1
+        self.l211y = self.l210y1
+        self.l211x1 = self.l211x
+        # self.l211y1 = self.height#  левый нижний
+
+        self.l212x = self.l211x1
+        self.l212y = self.l211y1
+        self.l212x1 = (self.width / 4.0) + self.thickness
+        # self.l212y1 = -(self.thickness)#  левый нижний
+        
+        self.l213x = self.l212x1
+        self.l213y = self.l212y1
+        self.l213x1 = self.l213x# - (self.thickness* * 2.0)
+        self.l213y1 = self.l210y#  левый нижний
+        
+        self.l214x = self.l213x1
+        self.l214y = self.l213y1
+        self.l214x1 = (self.width /  4.0) - self.thickness
+        self.l214y1 = self.l214y#  левый нижний
+        
+        self.l215x = self.l214x1
+        self.l215y = self.l214y1
+        self.l215x1 = self.l215x# width - (self.thickness* * 2.0)
+        # self.l215y1 = self.height#  левый нижний
+        
+        self.l216x = self.l215x1
+        self.l216y = self.l215y1
         # self.l16x1 = self.deep - (self.thickness* * 2.0)
         # self.l16y1 = self.height#  левый нижний
 
-         # top
+
+        # top
         self.arc101x = self.thickness
         self.arc101y = self.thickness
         self.arc101r = self.thickness
@@ -518,16 +672,16 @@ class smallbox:
         self.l101y = self.thickness
 
         # self.l101x1 = self.r4x + self.r4w - 20.0
-        self.l101y1 = self.thickness + self.width
+        self.l101y1 = self.width + (self.thickness * 2.0)
 
         self.r101x = self.thickness - (self.thickness / 2.0) - self.clearance
-        self.r101y = (self.thickness * 2.0) + (self.thickness / 2.0) + (self.width / 2.0) - self.clearance
+        self.r101y =  ((self.width / 2.0) - self.clearance - self.thickness) + ((self.thickness / 2.0) * 3.0) 
         self.r101w =  self.thickness  +  (self.clearance * 2.0)
         self.r101h =  (self.thickness * 2.0) + (self.clearance * 2.0)
         
         # l-t angle
         self.arc102x = self.arc101x
-        self.arc102y = (self.arc101y + self.width) - self.thickness
+        self.arc102y = self.arc101y + self.width + self.thickness
         self.arc102r = self.thickness
         
         self.c102x = self.arc102x
@@ -535,17 +689,17 @@ class smallbox:
         self.c102r = self.thickness / 2.0
 
         self.l102x = self.arc102x
-        self.l102y = self.width + self.thickness
+        self.l102y = self.width + (self.thickness * 3.0)
 
-        self.l102x1 = self.deep + self.thickness
+        self.l102x1 = self.deep + (self.thickness * 2.0)
         self.l102y1 = self.l102y
 
-        self.r102x =(self.thickness * 2.0) + (self.thickness / 2.0) + (self.deep / 2.0) - self.clearance
-        self.r102y = self.width - (self.thickness / 2.0) - self.clearance
+        self.r102x = ((self.deep / 2.0) - self.clearance - self.thickness) + ((self.thickness / 2.0) * 3.0)
+        self.r102y = self.c102y - (self.thickness / 2.0) - self.clearance
         self.r102w = (self.thickness * 2.0) + (self.clearance * 2.0)
         self.r102h = self.thickness  +  (self.clearance * 2.0)
         #r-t angle
-        self.arc103x = self.thickness + self.deep
+        self.arc103x = (self.thickness * 2.0 ) + self.deep
         self.arc103y = self.arc102y
         self.arc103r = self.arc102r
         
@@ -553,16 +707,127 @@ class smallbox:
         self.c103y = self.arc103y
         self.c103r = self.thickness / 2.0
 
-        self.l103x = self.deep + self.thickness
+        self.l103x = self.deep + (self.thickness * 3.0)
         self.l103y = self.arc103y
 
         self.l103x1 = self.l103x 
         self.l103y1 = self.arc101y
 
-        self.r103x = self.thickness - (self.thickness / 2.0) - self.clearance
-        self.r103y = (self.thickness * 2.0) + (self.thickness / 2.0) + (self.width / 2.0) - self.clearance
-        self.r103w =  self.thickness  +  (self.clearance * 2.0)
-        self.r103h =  (self.thickness * 2.0) + (self.clearance * 2.0)
+        self.r103x = self.c103x - (self.thickness / 2.0) - self.clearance
+        self.r103y = self.r101y
+        self.r103w =  self.r101w
+        self.r103h =  self.r101h
+        #r-b angle
+        self.arc104x = self.arc103x
+        self.arc104y = self.arc101y
+        self.arc104r = self.arc101r
+        
+        self.c104x = self.arc104x
+        self.c104y = self.arc104y
+        self.c104r = self.thickness / 2.0
+
+        self.l104x = self.l102x1
+        self.l104x1 = self.l102x
+
+        self.r104x = self.r102x
+        self.r104y = (self.thickness / 2.0)- self.clearance
+        self.r104w =  self.r102w
+        self.r104h =  self.r102h
+        # bottom -dno
+        self.arc151x = self.thickness
+        self.arc151y = self.thickness
+        self.arc151r = self.thickness
+        
+        self.c151x = self.thickness
+        self.c151y = self.thickness
+        self.c151r = self.thickness / 2.0
+
+        # self.l151x = self.r4x + 20.0
+        self.l151y = self.thickness
+
+        # self.l151x1 = self.r4x + self.r4w - 20.0
+        self.l151y1 = self.width + (self.thickness * 2.0)
+
+        self.r151x = self.thickness - (self.thickness / 2.0) - self.clearance
+        self.r151y =  ((self.width / 4.0) - self.clearance - self.thickness) + ((self.thickness / 2.0) * 3.0) 
+        self.r151w =  self.thickness  +  (self.clearance * 2.0)
+        self.r151h =  (self.thickness * 2.0) + (self.clearance * 2.0)
+        
+        self.r152x = self.thickness - (self.thickness / 2.0) - self.clearance
+        self.r152y = (((self.width / 4.0) * 3.0) - self.clearance - self.thickness) + ((self.thickness / 2.0) * 3.0) 
+        self.r152w =  self.thickness  +  (self.clearance * 2.0)
+        self.r152h =  (self.thickness * 2.0) + (self.clearance * 2.0)
+        
+        # l-t angle
+        self.arc152x = self.arc151x
+        self.arc152y = self.arc151y + self.width + self.thickness
+        self.arc152r = self.thickness
+        
+        self.c152x = self.arc152x
+        self.c152y = self.arc152y
+        self.c152r = self.thickness / 2.0
+
+        self.l152x = self.arc152x
+        self.l152y = self.width + (self.thickness * 3.0)
+
+        self.l152x1 = self.deep + (self.thickness * 2.0)
+        self.l152y1 = self.l152y
+
+        self.r153x = ((self.deep / 4.0) - self.clearance - self.thickness) + ((self.thickness / 2.0) * 3.0)
+        self.r153y = self.c152y - (self.thickness / 2.0) - self.clearance
+        self.r153w = (self.thickness * 2.0) + (self.clearance * 2.0)
+        self.r153h = self.thickness  +  (self.clearance * 2.0)
+        
+        self.r154x = (((self.deep / 4.0) * 3.0) - self.clearance - self.thickness) + ((self.thickness / 2.0) * 3.0)
+        self.r154y = self.c152y - (self.thickness / 2.0) - self.clearance
+        self.r154w = (self.thickness * 2.0) + (self.clearance * 2.0)
+        self.r154h = self.thickness  +  (self.clearance * 2.0)
+        #r-t angle
+        self.arc153x = (self.thickness * 2.0 ) + self.deep
+        self.arc153y = self.arc152y
+        self.arc153r = self.arc152r
+        
+        self.c153x = self.arc153x
+        self.c153y = self.arc153y
+        self.c153r = self.thickness / 2.0
+
+        self.l153x = self.deep + (self.thickness * 3.0)
+        self.l153y = self.arc153y
+
+        self.l153x1 = self.l153x 
+        self.l153y1 = self.arc151y
+
+        self.r155x = self.c153x - (self.thickness / 2.0) - self.clearance
+        self.r155y = self.r152y
+        self.r155w =  self.r151w
+        self.r155h =  self.r151h
+ 
+        self.r156x = self.c153x - (self.thickness / 2.0) - self.clearance
+        self.r156y = self.r151y
+        self.r156w =  self.r151w
+        self.r156h =  self.r151h
+        #r-b angle
+        self.arc154x = self.arc153x
+        self.arc154y = self.arc151y
+        self.arc154r = self.arc151r
+        
+        self.c154x = self.arc154x
+        self.c154y = self.arc154y
+        self.c154r = self.thickness / 2.0
+
+        self.l154x = self.l152x1
+        self.l154x1 = self.l152x
+
+        self.r157x = self.r154x
+        self.r157y = (self.thickness / 2.0)- self.clearance
+        self.r157w =  self.r154w
+        self.r157h =  self.r154h
+        
+        self.r158x = self.r153x
+        self.r158y = (self.thickness / 2.0)- self.clearance
+        self.r158w =  self.r153w
+        self.r158h =  self.r153h
+
 
 
 
@@ -591,44 +856,15 @@ class drawmodel: #  версия 0.4 окружности
         figureobj.height = float(self.height)
         figureobj.deep = float(self.deep)
         figureobj.thickness = float(self.thickness)
-        # figureobj.bf = float(self.bf)
+      
         if hasattr(figureobj,  'clearance'):#  есть атрибут отступ,  для псевдофрезы
-        #     figureobj.wfreza = self.wfreza
+     
             figureobj.clearance  = float(self.clearance)
-        # if hasattr(figureobj,  'findent'):#  есть атрибут отступ,  для псевдофрезы
-        #     figureobj.findent = self.findent
-        # figureobj.infield = self.infield
-        # figureobj.hinfield = self.hinfield
-        # print(dir(figureobj))
-        # figureobj.compute(self)
-        # draw83.findent = float(findent.get()) #  задаём остут для псевдофрезы
-        # print ('make object')
+
         figureobj.compute()# float(self.lf),  float(self.tf),  float(self.rf),  float(self.bf) )
-        # print (getattr(figureobj, 'r1x'))
-
-        # # прям для псевдофрезы
-        # if hasattr(figureobj,  'pfr1x'):#  есть прямоугольник 24
-            # рисум прямоугольник псевдофрезы
-           #  pfrect1 = dxf.rectangle((figureobj.pfr1x, figureobj.pfr1y),  figureobj.pfr1w,  figureobj.pfr1h,  color=7)
-           #  drawing.add(pfrect1)
-        # if hasattr(figureobj,  'pfr2x'):#  есть прямоугольник 24
-            # рисум прямоугольник псевдофрезы
-           #  pfrect2 = dxf.rectangle((figureobj.pfr2x, figureobj.pfr2y),  figureobj.pfr2w,  figureobj.pfr2h,  color=7)
-           #  drawing.add(pfrect2)
-        # if hasattr(figureobj,  'pfr3x'):#  есть прямоугольник 24
-            # рисум прямоугольник псевдофрезы
-            # pfrect3 = dxf.rectangle((figureobj.pfr3x, figureobj.pfr3y),  figureobj.pfr3w,  figureobj.pfr3h,  color=7)
-            # drawing.add(pfrect3)
-
-            #  print ('kalevka')
-            # kalevka1line = dxf.line( (self.lf,  0),  ( self.lf,  self.hpanel ) )# первая линия
-            # kalevka2line = dxf.line( (self.wpanel - self.rf,  0), ( self.wpanel - self.rf,  self.hpanel) )#  вторая линия
-            # drawing.add(kalevka1line)
-            # drawing.add(kalevka2line)
-        # фигуры прередней \ заней стенки
         #  обработка линий в цикле
-        for X in range(1, 99):
-            drawing.add_layer('FACE-ANFACE',color=1, linetype = 'SOLID')
+        for X in range(1, 49):
+            drawing.add_layer('SIDER',color=1, linetype = 'SOLID')
             # vt = ('l%dx' % X)
             #  прямоугольникик в цикле
             if hasattr(figureobj,  ('r%dx' % X)):#  есть прямоугольник
@@ -636,7 +872,7 @@ class drawmodel: #  версия 0.4 окружности
                 ry = getattr(figureobj,  ('r%dy' % X))
                 rw = getattr(figureobj,  ('r%dw' % X))
                 rh = getattr(figureobj,  ('r%dh' % X))
-                rect = dxf.rectangle((rx,  ry),  rw,  rh, layer = 'FACE-ANFACE')
+                rect = dxf.rectangle((rx,  ry),  rw,  rh, layer = 'SIDER')
                 drawing.add(rect)
             if hasattr(figureobj,  ('c%dx' % X)):#  есть окружность
 
@@ -644,7 +880,7 @@ class drawmodel: #  версия 0.4 окружности
                 cy = getattr(figureobj,  ('c%dy' % X))
                 cr = getattr(figureobj,  ('c%dr' % X))
 
-                circle = dxf.circle(cr, (cx,  cy), layer = 'FACE-ANFACE')
+                circle = dxf.circle(cr, (cx,  cy), layer = 'SIDER')
                 drawing.add(circle)
             #  есть дуга для псевдо
             if hasattr(figureobj,  ('arc%dx' % X)):#  есть дуга
@@ -654,7 +890,7 @@ class drawmodel: #  версия 0.4 окружности
                 arcsa = getattr(figureobj,  ('arc%dsangle' % X))
                 arcse = getattr(figureobj,  ('arc%deangle' % X))
                 # рисум прямоугольник псевдофрезы
-                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'FACE-ANFACE')
+                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'SIDER')
                 drawing.add(arc)
             #  линии в цикле
             if hasattr(figureobj,  ('l%dx' % X)):#  есть линия
@@ -663,13 +899,54 @@ class drawmodel: #  версия 0.4 окружности
                 lx1 = getattr(figureobj,  ('l%dx1' % X))
                 ly1 = getattr(figureobj,  ('l%dy1' % X))
                 # print(lx,  ly,  lx1,  ly1)
-                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'FACE-ANFACE')
+                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'SIDER')
                 drawing.add(linecyc)
                 # line = dxf.line((1.2,  3.7),  (5.5,  9.7),  layer='LINES')
 
-        # фигура правой левой стенки
-        for X in range(100, 199):
-            drawing.add_layer('SIDER-SIDEL', color=7, linetype = 'SOLID')
+        #  чертим переднюю стенку
+        for X in range(50, 99):
+            drawing.add_layer('SIDEL',color=1, linetype = 'SOLID')
+            # vt = ('l%dx' % X)
+            #  прямоугольникик в цикле
+            if hasattr(figureobj,  ('r%dx' % X)):#  есть прямоугольник
+                rx = getattr(figureobj,  ('r%dx' % X))
+                ry = getattr(figureobj,  ('r%dy' % X))
+                rw = getattr(figureobj,  ('r%dw' % X))
+                rh = getattr(figureobj,  ('r%dh' % X))
+                rect = dxf.rectangle((rx,  ry),  rw,  rh, layer = 'SIDEL')
+                drawing.add(rect)
+            if hasattr(figureobj,  ('c%dx' % X)):#  есть окружность
+
+                cx = getattr(figureobj,  ('c%dx' % X))
+                cy = getattr(figureobj,  ('c%dy' % X))
+                cr = getattr(figureobj,  ('c%dr' % X))
+
+                circle = dxf.circle(cr, (cx,  cy), layer = 'SIDEL')
+                drawing.add(circle)
+            #  есть дуга для псевдо
+            if hasattr(figureobj,  ('arc%dx' % X)):#  есть дуга
+                arcx = getattr(figureobj,  ('arc%dx' % X))
+                arcy = getattr(figureobj,  ('arc%dy' % X))
+                arcr = getattr(figureobj,  ('arc%dr' % X))
+                arcsa = getattr(figureobj,  ('arc%dsangle' % X))
+                arcse = getattr(figureobj,  ('arc%deangle' % X))
+                # рисум прямоугольник псевдофрезы
+                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'SIDEL')
+                drawing.add(arc)
+            #  линии в цикле
+            if hasattr(figureobj,  ('l%dx' % X)):#  есть линия
+                lx = getattr(figureobj,  ('l%dx' % X))
+                ly = getattr(figureobj,  ('l%dy' % X))
+                lx1 = getattr(figureobj,  ('l%dx1' % X))
+                ly1 = getattr(figureobj,  ('l%dy1' % X))
+                # print(lx,  ly,  lx1,  ly1)
+                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'SIDEL')
+                drawing.add(linecyc)
+                # line = dxf.line((1.2,  3.7),  (5.5,  9.7),  layer='LINES')
+
+        # фигура крышки
+        for X in range(100, 149):
+            drawing.add_layer('TOP', color=7, linetype = 'SOLID')
         # vt = ('l%dx' % X)
         #  прямоугольникик в цикле
             if hasattr(figureobj,  ('r%dx' % X)):#  есть прямоугольник
@@ -677,7 +954,7 @@ class drawmodel: #  версия 0.4 окружности
                 ry = getattr(figureobj,  ('r%dy' % X))
                 rw = getattr(figureobj,  ('r%dw' % X))
                 rh = getattr(figureobj,  ('r%dh' % X))
-                rect = dxf.rectangle((rx,  ry),  rw,  rh,  color=7, layer = 'SIDER-SIDEL')
+                rect = dxf.rectangle((rx,  ry),  rw,  rh,  color=7, layer = 'TOP')
                 drawing.add(rect)
             if hasattr(figureobj,  ('c%dx' % X)):#  есть окружность
 
@@ -685,7 +962,7 @@ class drawmodel: #  версия 0.4 окружности
                 cy = getattr(figureobj,  ('c%dy' % X))
                 cr = getattr(figureobj,  ('c%dr' % X))
 
-                circle = dxf.circle(cr, (cx,  cy), layer = 'SIDER-SIDEL')
+                circle = dxf.circle(cr, (cx,  cy), layer = 'TOP')
                 drawing.add(circle)
             #  есть дуга для псевдо
             if hasattr(figureobj,  ('arc%dx' % X)):#  есть дуга
@@ -695,7 +972,7 @@ class drawmodel: #  версия 0.4 окружности
                 arcsa = getattr(figureobj,  ('arc%dsangle' % X))
                 arcse = getattr(figureobj,  ('arc%deangle' % X))
                 # рисум прямоугольник псевдофрезы
-                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'SIDER-SIDEL')
+                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'TOP')
                 drawing.add(arc)
             #  линии в цикле
             if hasattr(figureobj,  ('l%dx' % X)):#  есть линия
@@ -704,12 +981,11 @@ class drawmodel: #  версия 0.4 окружности
                 lx1 = getattr(figureobj,  ('l%dx1' % X))
                 ly1 = getattr(figureobj,  ('l%dy1' % X))
                 # print(lx,  ly,  lx1,  ly1)
-                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'SIDER-SIDE')
+                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'TOP')
                 drawing.add(linecyc)
-                # line = dxf.line((1.2,  3.7),  (5.5,  9.7),  layer='LINES')
-        ## фигура крышки  и днa
-        for X in range(200,  299):
-            drawing.add_layer('TOP-BOTTOM',color=3, linetype = 'SOLID')
+       ## фигура дно
+        for X in range(150,  199):
+            drawing.add_layer('BOTTOM',color=3, linetype = 'SOLID')
         # vt = ('l%dx' % X)
         #  прямоугольникик в цикле
             if hasattr(figureobj,  ('r%dx' % X)):#  есть прямоугольник
@@ -717,7 +993,7 @@ class drawmodel: #  версия 0.4 окружности
                 ry = getattr(figureobj,  ('r%dy' % X))
                 rw = getattr(figureobj,  ('r%dw' % X))
                 rh = getattr(figureobj,  ('r%dh' % X))
-                rect = dxf.rectangle((rx,  ry),  rw,  rh, layer = 'TOP-BOTTOM')
+                rect = dxf.rectangle((rx,  ry),  rw,  rh, layer = 'BOTTOM')
                 drawing.add(rect)
             if hasattr(figureobj,  ('c%dx' % X)):#  есть окружность
 
@@ -725,7 +1001,7 @@ class drawmodel: #  версия 0.4 окружности
                 cy = getattr(figureobj,  ('c%dy' % X))
                 cr = getattr(figureobj,  ('c%dr' % X))
 
-                circle = dxf.circle(cr, (cx,  cy), layer = 'TOP-BOTTOM')
+                circle = dxf.circle(cr, (cx,  cy), layer = 'BOTTOM')
                 drawing.add(circle)
             #  есть дуга для псевдо
             if hasattr(figureobj,  ('arc%dx' % X)):#  есть дуга
@@ -735,7 +1011,7 @@ class drawmodel: #  версия 0.4 окружности
                 arcsa = getattr(figureobj,  ('arc%dsangle' % X))
                 arcse = getattr(figureobj,  ('arc%deangle' % X))
                 # рисум прямоугольник псевдофрезы
-                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'TOP-BOTTOM')
+                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'BOTTOM')
                 drawing.add(arc)
             #  линии в цикле
             if hasattr(figureobj,  ('l%dx' % X)):#  есть линия
@@ -744,7 +1020,85 @@ class drawmodel: #  версия 0.4 окружности
                 lx1 = getattr(figureobj,  ('l%dx1' % X))
                 ly1 = getattr(figureobj,  ('l%dy1' % X))
                 # print(lx,  ly,  lx1,  ly1)
-                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'TOP-BOTTOM')
+                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'BOTTOM')
+                drawing.add(linecyc)
+        ### фигура  днa
+        for X in range(200,  249):
+            drawing.add_layer('FACE',color=3, linetype = 'SOLID')
+        # vt = ('l%dx' % X)
+        #  прямоугольникик в цикле
+            if hasattr(figureobj,  ('r%dx' % X)):#  есть прямоугольник
+                rx = getattr(figureobj,  ('r%dx' % X))
+                ry = getattr(figureobj,  ('r%dy' % X))
+                rw = getattr(figureobj,  ('r%dw' % X))
+                rh = getattr(figureobj,  ('r%dh' % X))
+                rect = dxf.rectangle((rx,  ry),  rw,  rh, layer = 'FACE')
+                drawing.add(rect)
+            if hasattr(figureobj,  ('c%dx' % X)):#  есть окружность
+
+                cx = getattr(figureobj,  ('c%dx' % X))
+                cy = getattr(figureobj,  ('c%dy' % X))
+                cr = getattr(figureobj,  ('c%dr' % X))
+
+                circle = dxf.circle(cr, (cx,  cy), layer = 'FACE')
+                drawing.add(circle)
+            #  есть дуга для псевдо
+            if hasattr(figureobj,  ('arc%dx' % X)):#  есть дуга
+                arcx = getattr(figureobj,  ('arc%dx' % X))
+                arcy = getattr(figureobj,  ('arc%dy' % X))
+                arcr = getattr(figureobj,  ('arc%dr' % X))
+                arcsa = getattr(figureobj,  ('arc%dsangle' % X))
+                arcse = getattr(figureobj,  ('arc%deangle' % X))
+                # рисум прямоугольник псевдофрезы
+                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'FACE')
+                drawing.add(arc)
+            #  линии в цикле
+            if hasattr(figureobj,  ('l%dx' % X)):#  есть линия
+                lx = getattr(figureobj,  ('l%dx' % X))
+                ly = getattr(figureobj,  ('l%dy' % X))
+                lx1 = getattr(figureobj,  ('l%dx1' % X))
+                ly1 = getattr(figureobj,  ('l%dy1' % X))
+                # print(lx,  ly,  lx1,  ly1)
+                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'FACE')
+                drawing.add(linecyc)
+   ### фигура  днa
+        for X in range(250,  299):
+            drawing.add_layer('ANFACE',color=3, linetype = 'SOLID')
+        # vt = ('l%dx' % X)
+        #  прямоугольникик в цикле
+            if hasattr(figureobj,  ('r%dx' % X)):#  есть прямоугольник
+                rx = getattr(figureobj,  ('r%dx' % X))
+                ry = getattr(figureobj,  ('r%dy' % X))
+                rw = getattr(figureobj,  ('r%dw' % X))
+                rh = getattr(figureobj,  ('r%dh' % X))
+                rect = dxf.rectangle((rx,  ry),  rw,  rh, layer = 'ANFACE')
+                drawing.add(rect)
+            if hasattr(figureobj,  ('c%dx' % X)):#  есть окружность
+
+                cx = getattr(figureobj,  ('c%dx' % X))
+                cy = getattr(figureobj,  ('c%dy' % X))
+                cr = getattr(figureobj,  ('c%dr' % X))
+
+                circle = dxf.circle(cr, (cx,  cy), layer = 'ANFACE')
+                drawing.add(circle)
+            #  есть дуга для псевдо
+            if hasattr(figureobj,  ('arc%dx' % X)):#  есть дуга
+                arcx = getattr(figureobj,  ('arc%dx' % X))
+                arcy = getattr(figureobj,  ('arc%dy' % X))
+                arcr = getattr(figureobj,  ('arc%dr' % X))
+                arcsa = getattr(figureobj,  ('arc%dsangle' % X))
+                arcse = getattr(figureobj,  ('arc%deangle' % X))
+                # рисум прямоугольник псевдофрезы
+                arc = dxf.arc(arcr, (arcx,  arcy),  arcsa,  arcse, layer = 'ANFACE')
+                drawing.add(arc)
+            #  линии в цикле
+            if hasattr(figureobj,  ('l%dx' % X)):#  есть линия
+                lx = getattr(figureobj,  ('l%dx' % X))
+                ly = getattr(figureobj,  ('l%dy' % X))
+                lx1 = getattr(figureobj,  ('l%dx1' % X))
+                ly1 = getattr(figureobj,  ('l%dy1' % X))
+                # print(lx,  ly,  lx1,  ly1)
+                linecyc = dxf.line( (lx,  ly),  (lx1,  ly1), layer = 'ANFACE')
                 drawing.add(linecyc)
 #   записываем в файл
         drawing.save()
