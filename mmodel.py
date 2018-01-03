@@ -1,25 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'mmebel.ui'
-#
-# Created by: PyQt5 UI code generator 5.5.1
-#
-# WARNING! All changes made in this file will be lost!
-
 # ver 0.4 сшивка с объектом отрисовки модел
+# ver 0.5 поле для предпросмотр модели
+# ver 0.6 штформация по модели
 
+# ver 0.7 предпросмотр внешнего вида модели
 from PyQt5 import QtCore, QtGui, QtWidgets
 import models
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(700, 550)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(0, 0, 376, 516))
+#        self.widget.setGeometry(QtCore.QRect(0, 0, 376, 516))
         self.widget.setObjectName("widget")
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
@@ -34,8 +31,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.label_2)
         self.comboBox = QtWidgets.QComboBox(self.widget)
         self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("smallbox")
         self.comboBox.addItem("box")
+        self.comboBox.addItem("smallbox")
+        
+        self.comboBox.currentTextChanged.connect(self.informer)
         # self.comboBox.addItem("")
         # self.comboBox.addItem("")
         self.horizontalLayout.addWidget(self.comboBox)
@@ -102,7 +101,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.label_6 = QtWidgets.QLabel(self.widget)
         self.label_6.setObjectName("label_6")
-        self.label_6.setText("Тип соединения:")
+        self.label_6.setText("*Тип соединения:")
         self.horizontalLayout_6.addWidget(self.label_6)
         self.comboBox_2 = QtWidgets.QComboBox(self.widget)
         self.comboBox_2.setObjectName("comboBox_2")
@@ -123,10 +122,20 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.addLayout(self.verticalLayout)
         self.groupBox = QtWidgets.QGroupBox(self.widget)
         self.groupBox.setObjectName("groupBox")
+        self.groupBox.setTitle("Вид модели")
+        self.layoutModelPreview = QtWidgets.QHBoxLayout(self.widget)
+        self.previewModel = QtWidgets.QLabel(self.widget)
+        self.pixmap = QtGui.QPixmap("./img/box.jpeg")
+
+        self.previewModel.setPixmap(self.pixmap)
+        self.layoutModelPreview.addWidget(self.previewModel, stretch = 10)
+#        self.groupBox.setLayout(self.layoutModelPreview)
+        self.groupBox.setLayout(self.layoutModelPreview)
+
         self.horizontalLayout_7.addWidget(self.groupBox)
-        self.groupBox.raise_()
-        self.label_7.raise_()
-        self.lineEdit_5.raise_()
+        #self.groupBox.raise_()
+        #self.label_7.raise_()
+        #self.lineEdit_5.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         # self.retranslateUi(MainWindow)
@@ -158,6 +167,21 @@ class Ui_MainWindow(object):
         self.pushButton.clicked.connect(self.makemodel)
 
         self.groupBox.setTitle(_translate("MainWindow", "предспомтотр"))
+ # -------------------------------
+    def informer(self, event):
+        nameobj=self.comboBox.currentText()
+        nameobj=nameobj.replace('-','')
+        nameobj = nameobj.lower()
+        infobj = getattr(models,nameobj)()
+        self.textEdit.clear()
+        self.textEdit.append(infobj.info1)
+        self.textEdit.append(infobj.info2)
+        self.textEdit.append(infobj.info3)
+        self.textEdit.append(infobj.info4)
+        self.textEdit.append(infobj.info5)
+        
+        self.pixmap = QtGui.QPixmap('./img/' + infobj.infoimage)
+        self.previewModel.setPixmap(self.pixmap)
     def makemodel(self):
         ## makepanel
         #proverka() # проврка полей на допустимые символы и значени

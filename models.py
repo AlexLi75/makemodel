@@ -55,7 +55,7 @@ class box:
     info3 = 'стенки дублируются'
     info4 = ' '
     info5 = ' '
-
+    infoimage = 'box.jpeg'
     # ~ infield = 50.0 # поле между сегментами рисунка горизонтальная
     # ~ hinfield = 50.0 # поле между сегментами рисунка вертикальная
     # ~ wfreza = 0.01
@@ -113,6 +113,7 @@ class smallbox:
     info4 = 'на винтах'
     info5 = 'расчёт по внутреннему размер'
 
+    infoimage = 'smallbox.jpeg'
     # rigth side
     l1x = 0
     l1y = 0
