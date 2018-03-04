@@ -6,6 +6,7 @@
 # ver 0.6 штформация по модели
 
 # ver 0.7 предпросмотр внешнего вида модели
+# ver 0.8 табурет малый
 from PyQt5 import QtCore, QtGui, QtWidgets
 import models
 
@@ -33,7 +34,7 @@ class Ui_MainWindow(object):
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("box")
         self.comboBox.addItem("smallbox")
-        
+        self.comboBox.addItem("taburet")
         self.comboBox.currentTextChanged.connect(self.informer)
         # self.comboBox.addItem("")
         # self.comboBox.addItem("")
@@ -47,7 +48,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.label)
         self.lineEdit = QtWidgets.QLineEdit(self.widget)
         self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit.setText('100')
+        self.lineEdit.setText('350')
         self.horizontalLayout_3.addWidget(self.lineEdit)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
@@ -59,7 +60,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.label_3)
         self.lineEdit_2 = QtWidgets.QLineEdit(self.widget)
         self.lineEdit_2.setObjectName("lineEdit_2")
-        self.lineEdit_2.setText('30')
+        self.lineEdit_2.setText('300')
         self.horizontalLayout_2.addWidget(self.lineEdit_2)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
@@ -70,7 +71,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.label_4)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.widget)
         self.lineEdit_3.setObjectName("lineEdit_3")
-        self.lineEdit_3.setText('200')
+        self.lineEdit_3.setText('240')
         self.horizontalLayout_4.addWidget(self.lineEdit_3)
         self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
@@ -82,7 +83,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.addWidget(self.label_5)
         self.lineEdit_4 = QtWidgets.QLineEdit(self.widget)
         self.lineEdit_4.setObjectName("lineEdit_4")
-        self.lineEdit_4.setText("4")
+        self.lineEdit_4.setText("10")
         self.horizontalLayout_5.addWidget(self.lineEdit_4)
         self.verticalLayout.addLayout(self.horizontalLayout_5)
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
@@ -192,7 +193,7 @@ class Ui_MainWindow(object):
         drawfig.width = float(self.lineEdit.text()) #путь для сохранения
         drawfig.height = float(self.lineEdit_2.text()) #номер заказа
         drawfig.deep = float(self.lineEdit_3.text()) # ширина панели
-        drawfig.thinkness = float(self.lineEdit_4.text()) # высота панели
+        drawfig.thickness = float(self.lineEdit_4.text()) # высота панели
         drawfig.clearance = float(self.lineEdit_5.text()) # номер рисунка
         drawfig.typecon = self.comboBox_2.currentText() # номер рисунка
 
