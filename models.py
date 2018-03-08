@@ -22,6 +22,7 @@ from dxfwrite import DXFEngine as dxf
 #  версия 0.10 doc for a class
 #  версия 0.11 табурет
 #  версия 0.11.1 табурет царга
+#  версия 0.12 исправление ошибок
 
 #  функции для дуг
 def angle (x1, y1, x2, y2, x3, y3, x4, y4):
@@ -488,7 +489,7 @@ class taburet:
 
         self.l10x = self.l9x1
         self.l10y = self.l9y1
-        self.l10x1 = self.l9x + (self.thickness / 2.0) + 50.0
+        self.l10x1 = (self.l9x - self.thickness) + 50.0
         self.l10y1 = self.l10y
 
         p1x = self.l10x1
@@ -499,17 +500,18 @@ class taburet:
         p3y = p1y
         #print (p1x, p1y, p2x,p2y, p3x, p3y)
 
-        self.arc1x, self.arc1y = center(p3x, p3y, p2x, p2y, p1x, p1y)
+        self.arc1x, self.arc1y = center(p1x, p1y, p2x, p2y, p3x, p3y)
         self.arc1r = math.sqrt(sqr(self.arc1x - p1x) + sqr(self.arc1y - p1y))
         #print (self.arc1y)
-        alpha = angle(self.arc1x, self.arc1y, p3x, p3y, self.arc1x, self.arc1y, p1x, p1y)
-        self.arc1sangle = 270.0 + (alpha / 5.9)
-        self.arc1eangle = 270.0 - (alpha / 5.9)
+        alpha = angle(self.arc1x, self.arc1y, p1x, p1y, self.arc1x, self.arc1y, p3x, p3y)
+        #print (alpha)
+        self.arc1sangle = 270.0 - ((180.0 - alpha) / 2.0)
+        self.arc1eangle = 270.0 + ((180.0 - alpha) / 2.0)
 
 
         self.l11x = p3x
         self.l11y = self.l10y1
-        self.l11x1 = self.height + (self.thickness / 2.0)
+        self.l11x1 = self.height - (self.thickness / 2.0)
         self.l11y1 = self.l9y1#  левый нижний
 
         self.l12x = self.l11x1
@@ -539,9 +541,10 @@ class taburet:
         self.arc3x, self.arc3y = center(p1x, p1y, p2x, p2y, p3x, p3y)
         self.arc3r = math.sqrt(sqr(self.arc3x - p1x) + sqr(self.arc3y - p1y))
         #print (self.arc1y)
-        alpha = angle(self.arc3x, self.arc3y, p3x, p3y, self.arc3x, self.arc3y, p1x, p1y)
-        self.arc3sangle = 90.0 + (alpha / 5.9)
-        self.arc3eangle = 90.0 - (alpha / 5.9)
+        alpha = angle(self.arc3x, self.arc3y, p1x, p1y, self.arc3x, self.arc3y, p3x, p3y)
+        #print (alpha)
+        self.arc3sangle = 90.0 - ((180 - alpha) / 2.0)
+        self.arc3eangle = 90.0 + ((180 -alpha) / 2.0)
 
         self.l15x = self.l10x1
         #self.l15y = p1y
