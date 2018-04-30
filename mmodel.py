@@ -7,6 +7,7 @@
 # ver 0.7 предпросмотр внешнего вида модели
 # ver 0.8 табурет малый
 # ver 0.8.1 табурет малый исправление ошибок
+# ver 0.8.2 табурет малый исправлена ошибка в расчёте ножки
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import models
@@ -181,7 +182,7 @@ class Ui_MainWindow(object):
         self.textEdit.append(infobj.info3)
         self.textEdit.append(infobj.info4)
         self.textEdit.append(infobj.info5)
-        
+
         self.pixmap = QtGui.QPixmap('./img/' + infobj.infoimage)
         self.previewModel.setPixmap(self.pixmap)
     def makemodel(self):
